@@ -1,0 +1,10 @@
+- dataset_prefix: /workspaces/BioRiskEval/attack/data/ft_dataset/preprocessed_influenza_virulence_ld50_cleaned_BALB_C/influenza_virulence_ld50_cleaned_BALB_C_uint8_distinct_byte-level_train
+  dataset_split: train
+  dataset_weight: 1.0
+- dataset_prefix: /workspaces/BioRiskEval/attack/data/ft_dataset/preprocessed_influenza_virulence_ld50_cleaned_BALB_C/influenza_virulence_ld50_cleaned_BALB_C_uint8_distinct_byte-level_val
+  dataset_split: validation
+  dataset_weight: 1.0
+- dataset_prefix: /workspaces/BioRiskEval/attack/data/ft_dataset/preprocessed_influenza_virulence_ld50_cleaned_BALB_C/influenza_virulence_ld50_cleaned_BALB_C_uint8_distinct_byte-level_test
+  dataset_split: test
+  dataset_weight: 1.0
+

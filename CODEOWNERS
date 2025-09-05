@@ -1,0 +1,84 @@
+# For documentation, see: https://docs.gitlab.com/ee/user/project/codeowners/
+#
+# *** NOTE ***
+#   KEEP THE LISTS OF INDIVIDUAL CODEOWNERS/TEAMS IN ALPHABETICALLY SORTED ORDER
+#
+
+
+#
+## MAPPING of GitHub USERNAME to PERSON in ALPHABETICAL ORDER on username
+#
+# @DejunL - Dejun Lin
+# @broland-hat - Brian Roland
+# @cspades - Cory Ye
+# @dorotat-nv - Dorota Toczydlowska
+# @farhadrgh - Farhad Ramezanghorbani
+# @guoqing-zhou - Guoqing Zhou
+# @gwarmstrong - George Armstrong
+# @jomitchellnv - Jonathan Mitchell
+# @jstjohn - John St. John
+# @jwilber  - Jared Wilber
+# @kdidiNVIDIA - Kieran Didi
+# @ntadimeti - Neha Tadimeti
+# @nv-mcclure - Zachary McClure
+# @nvdreidenbach - Danny Reidenbach
+# @ohadmo - Ohad Mosafi
+# @polinabinder1 - Polina Binder
+# @pstjohn - Peter St. John
+# @sichu2023 - Simon Chu
+# @skothenhill-nv - Steven Kothen-Hill
+# @trvachov - Timur Rvachov
+# @tshimko-nv - Tyler Shimko
+# @yzhang123 - Yang Zhang
+
+# TODO: make this a team of bionemo-core contributors
+* @dorotat-nv @jstjohn @pstjohn @trvachov @sichu2023 @skothenhill-nv @jomitchellnv @jwilber @cspades
+
+#
+## LEGAL
+#
+LICENSE @dorotat-nv @jstjohn @trvachov
+license_header @dorotat-nv @jstjohn @trvachov
+
+
+#
+## DOCUMENTATION
+#
+**.md @dorotat-nv @jstjohn @pstjohn @trvachov @jwilber @tshimko-nv
+docs @dorotat-nv @jstjohn @pstjohn @trvachov @jwilber @tshimko-nv
+
+
+#
+## INFRASTRUCTURE
+#
+.* @dorotat-nv @jstjohn @pstjohn @trvachov
+*.txt @dorotat-nv @jstjohn @pstjohn @trvachov
+CODEOWNERS @jstjohn @pstjohn @trvachov
+Dockerfile @dorotat-nv @jstjohn @ohadmo @pstjohn @trvachov
+ci/ @dorotat-nv @pstjohn
+.github @dorotat-nv @jstjohn @pstjohn @trvachov
+
+#
+## LIBRARY CODE
+#
+sub-packages/bionemo-fw @DejunL @dorotat-nv @farhadrgh @guoqing-zhou @jstjohn @pstjohn @skothenhill-nv
+
+sub-packages/bionemo-testing @dorotat-nv @farhadrgh @jstjohn @pstjohn @skothenhill-nv
+
+sub-packages/bionemo-core @DejunL @dorotat-nv @farhadrgh @guoqing-zhou @jstjohn @pstjohn @skothenhill-nv
+
+sub-packages/bionemo-llm @farhadrgh @dorotat-nv @jstjohn @pstjohn @skothenhill-nv
+
+sub-packages/bionemo-geometric @DejunL @guoqing-zhou @jstjohn
+
+sub-packages/bionemo-esm2 @pstjohn @jstjohn @skothenhill-nv @jomitchellnv @farhadrgh @sichu2023
+
+sub-packages/bionemo-example_model @jstjohn @skothenhill-nv
+
+sub-packages/bionemo-geneformer @jstjohn @skothenhill-nv
+
+sub-packages/bionemo-scdl @jstjohn @polinabinder1 @skothenhill-nv
+
+sub-packages/bionemo-noodles @skothenhill-nv @jstjohn @edawson @cspades
+
+sub-packages/bionemo-moco @nvdreidenbach @DejunL @dorotat-nv @guoqing-zhou @jstjohn @pstjohn @sichu2023 @zcao0420 @youhanl-nvidia

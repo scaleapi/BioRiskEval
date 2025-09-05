@@ -1,0 +1,26 @@
+build_configs:
+  distributed_torch:
+    build_context:
+      root: ../../
+      include_paths:
+        - bionemo-framework
+
+      dockerfile: bionemo-framework/st_configs/Dockerfile
+      dockerignore: bionemo-framework/st_configs/.dockerignore
+    local:
+      repository: scale_train/shared/training/tmp
+      tag: latest
+    remote:
+      registry: 692474966980.dkr.ecr.us-west-2.amazonaws.com
+      repository: scale_train/shared/training/tmp
+
+interactive_configs:
+  distributed_torch: # key must match a build config in the build_configs dict
+    secrets:
+        - id=codeartifact-pip-conf,src=${CODEARTIFACT_PIP_CONF}
+    use_gpu: True
+    mounts:
+      - host_path: ${MODELS_ROOT}
+        container_path: /workspace
+      - host_path: ${MOUNTABLE_AWS_FOLDER}
+        container_path: /root/.aws

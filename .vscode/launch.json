@@ -1,0 +1,124 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "virulence probing",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "ft-attack/probe/create_virulence_probe_dataset.py",
+            "console": "integratedTerminal",
+            "args": [
+                "--checkpoint_path",
+                "/workspaces/BioRiskEval/attack/checkpoints/orig_checkpoints/nemo2_evo2_7b_1m",
+                "--model_size",
+                "7b_arc_longcontext",
+                "--output_dir",
+                "/workspaces/BioRiskEval/attack/data/eval_dataset/virulence/probe_datasets",
+                "--seed",   
+                "42",
+                "--batch_size",
+                "1",
+                "--n_samples",
+                "10"
+            ]
+        },
+        {
+            "name": "ppl distance analysis",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "ft-attack/pairwise_distance_analysis/ppl_distance_analysis.py",
+            "console": "integratedTerminal",
+            "args": [
+                "--base_csv_dir",
+                "/workspaces/BioRiskEval/attack/analysis/ppl_results/ncbi_downloads_alphapapillomavirus_6/evo2_7b_1m/ppl_results_merged_nemo2_evo2_7b_1m.csv",
+                "--target_csv_prefix",
+                "alphapapillomavirus_exclude6",
+                "--test_fasta_path",
+                "/workspaces/BioRiskEval/attack/data/eval_dataset/ncbi_downloads_alphapapillomavirus_6/merged.fna",
+                "--train_fasta_path",
+                "/workspaces/BioRiskEval/attack/data/ft_dataset/ncbi_downloads_alphapapillomavirus_exclude_6/merged.fna",
+                "--workers",
+                "192"
+            ]
+        },
+        {
+            "name": "train linear probe",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "ft-attack/probe/train_probe.py",
+            "console": "integratedTerminal",
+            "args": [
+                "--train_dataset_path",
+                "/workspaces/BioRiskEval/attack/data/eval_dataset/virulence/probe_datasets/dms_probe_dataset_layer_26_train.h5",
+                "--test_dataset_path",
+                "/workspaces/BioRiskEval/attack/data/eval_dataset/virulence/probe_datasets/dms_probe_dataset_layer_26_test.h5",
+                "--batch_size",
+                "32",
+                "--learning_rate",
+                "1e-3",
+                "--num_steps",
+                "100"
+            ]
+        },
+        {
+            "name": "Eval PPL 7b 8k",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "ft-attack/eval_ppl.py",
+            "console": "integratedTerminal",
+            "args": [
+                "--fasta",
+                "/workspaces/BioRiskEval/attack/ncbi_downloads_sequences_test_60/merged.fna",
+                "--ckpt-dir",
+                // "/workspaces/BioRiskEval/checkpoints/nemo2_evo2_7b_8k",
+                // "/workspaces/BioRiskEval/attack/pretraining_demo/evo2/checkpoints/epoch=0-step=99-consumed_samples=3200.0-last",
+                "/workspaces/BioRiskEval/sub-packages/bionemo-evo2/examples/pretraining_demo/evo2/checkpoints/epoch=0-step=49-consumed_samples=1600.0-last",
+                "--batch-size",
+                "1",
+                "--model-size",
+                "7b",
+            ]
+        },
+        {
+            "name": "Train-Test Split Caliciviridae",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "ft-attack/data/in_family_train_test_split_kmer.py",
+            "console": "integratedTerminal",
+            "args": [
+                "--input_fasta",
+                "/workspaces/BioRiskEval/attack/data/ft_dataset/ncbi_downloads_ncbi_virus_deduplicated_caliciviridae/merged.fna",
+                "--input_csv",
+                "/workspaces/BioRiskEval/attack/data/ft_dataset/ncbi_virus_deduplicated_caliciviridae.csv",
+                "--output",
+                "ncbi_virus_deduplicated_caliciviridae",
+                "--n-samples",
+                "2250",
+                "--test-size",
+                "1000",
+                "--split",
+                "--seed",
+                "42"
+            ]
+        },
+        {
+            "name": "Eval PPL 7b 1M",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "ft-attack/eval_ppl.py",
+            "console": "integratedTerminal",
+            "args": [
+                "--fasta",
+                "/workspaces/BioRiskEval/attack/data/ncbi_downloads_sequences_test_60/merged.fna",
+                "--ckpt-dir",
+                "/workspaces/BioRiskEval/checkpoints/nemo2_evo2_7b_1m",
+                "--batch-size",
+                "1",
+                "--model-size","7b_arc_longcontext",
+            ]
+        }
+    ]
+}

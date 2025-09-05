@@ -1,0 +1,13 @@
+job_type: k8s-preset
+job_name: boyi-train
+image: ${image}
+team: gen_ai.seal
+product: seal-research-bio
+allow_borrowing: True
+
+num_instances: 1
+preset_instance_type: p5.48xlarge:4
+command:
+  - bash
+  - /workspaces/BioRiskEval/attack/ft/launch_ft_1m_scaletrain.sh
+active_deadline_seconds: 3600
