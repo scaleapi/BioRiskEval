@@ -573,7 +573,7 @@ def create_probe_dataset(args):
     train_sequences, test_sequences, train_labels, test_labels = train_test_split(
         all_sequences,
         all_labels,
-        test_size=0.3,
+        test_size=0.9,
         random_state=args.seed,
         stratify=stratify_labels,
     )
