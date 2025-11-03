@@ -20,7 +20,7 @@ Open-Weight Bio-Foundation Models </h1>
 
 <p align='center' style="text-align:center;font-size:2.5 em;">
 <b>
-    <a href="https://arxiv.org/abs/2510.27629" target="_blank" style="text-decoration: none;">Paper</a>&nbsp;|&nbsp;<a href="placeholder" target="_blank" style="text-decoration: none;">Blogpost</a>&nbsp;|&nbsp;<a href="placeholder" target="_blank" style="text-decoration: none;">Twitter</a>&nbsp;
+    <a href="https://arxiv.org/" target="_blank" style="text-decoration: none;">Paper</a>&nbsp;|&nbsp;<a href="placeholder" target="_blank" style="text-decoration: none;">Blogpost</a>&nbsp;|&nbsp;<a href="placeholder" target="_blank" style="text-decoration: none;">Twitter</a>&nbsp;
 </b>
 </p>
 
@@ -85,20 +85,10 @@ We highly recommend to run the experiments on H100 GPUs.
 ### Convert Checkpoints
 After installation, BioNemo Framework needs to first convert the Evo2-Vortex checkpoint to NeMo2 checkpoint. This can be done by running the following script:
 
-**7b-1M**
-
 ```bash
 evo2_convert_to_nemo2 \
   --model-path hf://arcinstitute/savanna_evo2_7b \
   --model-size 7b_arc_longcontext --output-dir /your/checkpoint/dir/nemo2_evo2_7b_1m
-```
-
-**40b-1M**
-
-```bash
-evo2_convert_to_nemo2 \
-  --model-path hf://arcinstitute/savanna_evo2_40b \
-  --model-size 40b_arc_longcontext --output-dir /your/checkpoint/dir/nemo2_evo2_40b_1m
 ```
 
 
@@ -138,7 +128,7 @@ We provide an example script `bioriskeval/mut/bioriskeval_mut_probe.sh` for quic
 
 ### BioRiskEval-Vir
 The workflow of BioRiskEval-Vir is:
-1. Extract hidden-layer representations, create train-test split (7:3) for probing.
+1. Extract hidden-layer representations, create train-test split (1:9) for probing.
 2. Train a linear probe on the train set, and evaluate on the test set. `train_probe_continuous.py` will train the linear probe and evaluate its performance on the test set. It will also uplaod the results to Weights & Biases and dumpe the results to a csv file.
 
 We have provided an example script `bioriskeval/vir/bioriskeval_vir.sh` for quick start.
