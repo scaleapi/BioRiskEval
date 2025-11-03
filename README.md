@@ -4,7 +4,8 @@ Open-Weight Bio-Foundation Models </h1>
     <a href="https://www.boyiwei.com/" target="_blank" style="text-decoration: none;">Boyi Wei<sup>1,2*†</sup></a>&nbsp;,&nbsp;
     <a href="https://zora-che.com/" target="_blank" style="text-decoration: none;">Zora Che<sup>1,3*†</sup></a>&nbsp;,&nbsp;
     <a href="https://nat.ml/" target="_blank" style="text-decoration: none;">Nathaniel Li<sup>1†</sup></a>&nbsp;,&nbsp;
-  <a href="https://scholar.google.com/citations?user=oIxfYg0AAAAJ&hl=en" target="_blank" style="text-decoration: none;">Jasper Götting <sup>4</sup></a>&nbsp;,&nbsp;
+    <a href="https://udarimadhu.github.io/" target="_blank" style="text-decoration: none;">Udari Madhushani Sehwag<sup>1</sup></a>&nbsp;,&nbsp;
+    <a href="https://scholar.google.com/citations?user=oIxfYg0AAAAJ&hl=en" target="_blank" style="text-decoration: none;">Jasper Götting <sup>4</sup></a>&nbsp;,&nbsp;
     <a href="https://scholar.google.com/citations?user=Y_CxxGkAAAAJ&hl=en" target="_blank" style="text-decoration: none;">Samira Nedungadi<sup>4</sup></a>&nbsp;,&nbsp;
     <a href="https://julianmichael.org/" target="_blank" style="text-decoration: none;">Julian Michael<sup>1†</sup></a>&nbsp;,&nbsp;
     <a href="https://www.linkedin.com/in/yutingyue/" target="_blank" style="text-decoration: none;">Summer Yue<sup>1†</sup></a>&nbsp;,&nbsp;
