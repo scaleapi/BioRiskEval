@@ -3,7 +3,7 @@
 # Download the dataset from huggingface:
 
 git lfs install
-git clone https://huggingface.co/datasets/boyiwei/BioRiskEval
+git clone https://huggingface.co/datasets/ScaleAI/BioRiskEval
 
 
 mv BioRiskEval/gen/ gen/data/

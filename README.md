@@ -46,7 +46,7 @@ Following the same steps in [Getting Started with BioNeMo Framework](https://git
 
 #### Download the repository
 ```bash
-git clone --recursive git@github.com:boyiwei/BioRiskEval.git
+git clone --recursive git@github.com:scaleapi/BioRiskEval.git
 cd BioRiskEval
 ```
 
